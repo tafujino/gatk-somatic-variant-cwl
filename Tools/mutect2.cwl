@@ -51,15 +51,30 @@ inputs:
   germline_resource:
     type: File
     format: edam:format_3016
+    secondaryFiles:
+      - .tbi
     inputBinding:
       prefix: --germline-resource
       position: 5
+  intervals:
+    type: string?
+    inputBinding:
+      prefix: --intervals
+      position: 6
+  force_call_alleles:
+    type: File?
+    format: edam:format_3016
+    secondaryFiles:
+      - .tbi
+    inputBinding:
+      prefix: --alleles
+      position: 7
   panel_of_normals:
     type: File
     format: edam:format_3016
     inputBinding:
       prefix: --panel-of-normals
-      position: 6
+      position: 8
   extra_args:
     type: string
     inputBinding:
@@ -81,9 +96,9 @@ outputs:
 arguments:
   - position: 2
     valueFrom: Mutect2
-  - position: 7
+  - position: 9
     prefix: --f1r2-tar-gz
     valueFrom: $(inputs.outprefix).f1r2.tar.gz
-  - position: 8
+  - position: 10
     prefix: -O
     valueFrom: $(inputs.outprefix).vcf.gz
