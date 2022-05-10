@@ -18,7 +18,6 @@ inputs:
   reference:
     type: File
     format: edam:format_1929
-    doc: reference FASTA
   java_options:
     type: string?
     inputBinding:
@@ -31,7 +30,7 @@ inputs:
       inputBinding:
         prefix: -I
     inputBinding:
-      position: 2
+      position: 3
   tumor_bams:
     type:
       type: array
@@ -39,7 +38,7 @@ inputs:
       inputBinding:
         prefix: -I
     inputBinding:
-      position: 3
+      position: 4
   normal_names:
     type:
       type: array
@@ -47,7 +46,7 @@ inputs:
       inputBinding:
         prefix: --normal-sample
     inputBinding:
-      position: 4
+      position: 5
   germline_resource:
     type: File
     format: edam:format_3016
@@ -55,12 +54,12 @@ inputs:
       - .tbi
     inputBinding:
       prefix: --germline-resource
-      position: 5
+      position: 6
   intervals:
     type: string?
     inputBinding:
       prefix: --intervals
-      position: 6
+      position: 7
   force_call_alleles:
     type: File?
     format: edam:format_3016
@@ -68,13 +67,13 @@ inputs:
       - .tbi
     inputBinding:
       prefix: --alleles
-      position: 7
+      position: 8
   panel_of_normals:
     type: File
     format: edam:format_3016
     inputBinding:
       prefix: --panel-of-normals
-      position: 8
+      position: 9
   extra_args:
     type: string
     inputBinding:
@@ -96,9 +95,9 @@ outputs:
 arguments:
   - position: 2
     valueFrom: Mutect2
-  - position: 9
+  - position: 10
     prefix: --f1r2-tar-gz
     valueFrom: $(inputs.outprefix).f1r2.tar.gz
-  - position: 10
+  - position: 11
     prefix: -O
     valueFrom: $(inputs.outprefix).vcf.gz
