@@ -26,29 +26,26 @@ inputs:
     inputBinding:
       position: 1
       prefix: --java-options
-  normal_bams:
-    type:
-      type: array
-      items: File
-      inputBinding:
-        prefix: -I
+  tumor_cram:
+    type: File
+    format: edam:format_3462
+    secondaryFiles:
+      - .crai
     inputBinding:
+      prefix: -I
       position: 3
-  tumor_bams:
-    type:
-      type: array
-      items: File
-      inputBinding:
-        prefix: -I
+  normal_cram:
+    type: File
+    format: edam:format_3462
+    secondaryFiles:
+      - .crai
     inputBinding:
+      prefix: -I
       position: 4
-  normal_names:
-    type:
-      type: array
-      items: string
-      inputBinding:
-        prefix: --normal-sample
+  normal_name:
+    type: string
     inputBinding:
+      prefix: --normal-sample
       position: 5
   germline_resource:
     type: File
