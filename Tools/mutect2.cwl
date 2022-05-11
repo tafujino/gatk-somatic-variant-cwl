@@ -18,6 +18,9 @@ inputs:
   reference:
     type: File
     format: edam:format_1929
+    secondaryFiles:
+      - .fai
+      - ^.dict
   java_options:
     type: string?
     inputBinding:
