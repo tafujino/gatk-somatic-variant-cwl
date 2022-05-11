@@ -86,18 +86,18 @@ outputs:
     type: File
     format: edam:format_3016
     outputBinding:
-      glob: $(inputs.outprefix).vcf.gz
+      glob: $(inputs.outprefix).somatic.vcf.gz
   f1r2:
     type: File
     outputBinding:
-      glob: $(inputs.outprefix).f1r2.tar.gz
+      glob: $(inputs.outprefix).somatic.f1r2.tar.gz
 
 arguments:
   - position: 2
     valueFrom: Mutect2
   - position: 10
     prefix: --f1r2-tar-gz
-    valueFrom: $(inputs.outprefix).f1r2.tar.gz
+    valueFrom: $(inputs.outprefix).somatic.f1r2.tar.gz
   - position: 11
     prefix: -O
-    valueFrom: $(inputs.outprefix).vcf.gz
+    valueFrom: $(inputs.outprefix).somatic.vcf.gz
