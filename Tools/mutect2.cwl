@@ -55,8 +55,8 @@ inputs:
     inputBinding:
       prefix: --germline-resource
       position: 6
-  intervals:
-    type: string?
+  interval_list:
+    type: File?
     inputBinding:
       prefix: --intervals
       position: 7
