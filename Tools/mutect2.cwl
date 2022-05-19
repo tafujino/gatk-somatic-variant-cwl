@@ -60,20 +60,12 @@ inputs:
     inputBinding:
       prefix: --intervals
       position: 7
-  force_call_alleles:
-    type: File?
-    format: edam:format_3016
-    secondaryFiles:
-      - .tbi
-    inputBinding:
-      prefix: --alleles
-      position: 8
   panel_of_normals:
     type: File
     format: edam:format_3016
     inputBinding:
       prefix: --panel-of-normals
-      position: 9
+      position: 8
   extra_args:
     type: string
     inputBinding:
@@ -95,9 +87,9 @@ outputs:
 arguments:
   - position: 2
     valueFrom: Mutect2
-  - position: 10
+  - position: 9
     prefix: --f1r2-tar-gz
     valueFrom: $(inputs.outprefix).somatic.f1r2.tar.gz
-  - position: 11
+  - position: 10
     prefix: -O
     valueFrom: $(inputs.outprefix).somatic.vcf.gz
