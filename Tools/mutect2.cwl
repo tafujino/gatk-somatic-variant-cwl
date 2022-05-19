@@ -35,7 +35,7 @@ inputs:
       prefix: -I
       position: 3
   normal_cram:
-    type: File
+    type: File?
     format: edam:format_3462
     secondaryFiles:
       - .crai
@@ -43,7 +43,7 @@ inputs:
       prefix: -I
       position: 4
   normal_name:
-    type: string
+    type: string?
     inputBinding:
       prefix: --normal-sample
       position: 5
