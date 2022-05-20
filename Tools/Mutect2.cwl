@@ -22,8 +22,8 @@ inputs:
       - .fai
       - ^.dict
     inputBinding:
-      prefix: -R
       position: 3
+      prefix: -R
   java_options:
     type: string?
     inputBinding:
@@ -35,40 +35,40 @@ inputs:
     secondaryFiles:
       - .crai
     inputBinding:
-      prefix: -I
       position: 4
+      prefix: -I
   normal_cram:
     type: File?
     format: edam:format_3462
     secondaryFiles:
       - .crai
     inputBinding:
-      prefix: -I
       position: 5
+      prefix: -I
   normal_name:
     type: string?
     inputBinding:
-      prefix: --normal-sample
       position: 6
+      prefix: --normal-sample
   germline_resource:
     type: File
     format: edam:format_3016
     secondaryFiles:
       - .tbi
     inputBinding:
-      prefix: --germline-resource
       position: 7
+      prefix: --germline-resource
   interval_list:
     type: File?
     inputBinding:
-      prefix: --intervals
       position: 8
+      prefix: --intervals
   panel_of_normals:
     type: File
     format: edam:format_3016
     inputBinding:
-      prefix: --panel-of-normals
       position: 9
+      prefix: --panel-of-normals
   extra_args:
     type: string
     inputBinding:
