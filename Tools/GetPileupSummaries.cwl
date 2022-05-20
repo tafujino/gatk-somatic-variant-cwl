@@ -66,7 +66,7 @@ outputs:
     type: File
     outputBinding:
       glob: |
-        $(inputs.outprefix).somatic.$(inputs.is_tumor ? 'tumor' : 'normal')-pileups.table
+        $(inputs.outprefix).somatic.$(inputs.is_tumor ? "tumor" : "normal")-pileups.table
 
 arguments:
   - position: 2
@@ -83,4 +83,4 @@ arguments:
   - position: 8
     prefix: -O
     valueFrom: |
-      $(inputs.outprefix).somatic.$(inputs.is_tumor ? 'tumor' : 'normal')-pileups.table
+      $(inputs.outprefix).somatic.$(inputs.is_tumor ? "tumor" : "normal")-pileups.table
