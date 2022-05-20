@@ -54,7 +54,7 @@ inputs:
     secondaryFiles:
       - .tbi
   extra_args:
-    type: string
+    type: string?
     inputBinding:
       position: 9
       shellQuote: false

@@ -70,7 +70,7 @@ inputs:
       position: 9
       prefix: --panel-of-normals
   extra_args:
-    type: string
+    type: string?
     inputBinding:
       position: 12
       shellQuote: false
