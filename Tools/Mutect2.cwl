@@ -21,6 +21,9 @@ inputs:
     secondaryFiles:
       - .fai
       - ^.dict
+    inputBinding:
+      prefix: -R
+      position: 3
   java_options:
     type: string?
     inputBinding:
@@ -33,7 +36,7 @@ inputs:
       - .crai
     inputBinding:
       prefix: -I
-      position: 3
+      position: 4
   normal_cram:
     type: File?
     format: edam:format_3462
@@ -41,12 +44,12 @@ inputs:
       - .crai
     inputBinding:
       prefix: -I
-      position: 4
+      position: 5
   normal_name:
     type: string?
     inputBinding:
       prefix: --normal-sample
-      position: 5
+      position: 6
   germline_resource:
     type: File
     format: edam:format_3016
@@ -54,18 +57,18 @@ inputs:
       - .tbi
     inputBinding:
       prefix: --germline-resource
-      position: 6
+      position: 7
   interval_list:
     type: File?
     inputBinding:
       prefix: --intervals
-      position: 7
+      position: 8
   panel_of_normals:
     type: File
     format: edam:format_3016
     inputBinding:
       prefix: --panel-of-normals
-      position: 8
+      position: 9
   extra_args:
     type: string
     inputBinding:
@@ -87,9 +90,9 @@ outputs:
 arguments:
   - position: 2
     valueFrom: Mutect2
-  - position: 9
+  - position: 10
     prefix: --f1r2-tar-gz
     valueFrom: $(inputs.outprefix).somatic.f1r2.tar.gz
-  - position: 10
+  - position: 11
     prefix: -O
     valueFrom: $(inputs.outprefix).somatic.vcf.gz
