@@ -15,6 +15,11 @@ hints:
 baseCommand: [ gatk ]
 
 inputs:
+  java_options:
+    type: string?
+    inputBinding:
+      position: 1
+      prefix: --java-options
   reference:
     type: File
     format: edam:format_1929
@@ -24,11 +29,6 @@ inputs:
     inputBinding:
       position: 3
       prefix: -R
-  java_options:
-    type: string?
-    inputBinding:
-      position: 1
-      prefix: --java-options
   tumor_cram:
     type: File
     format: edam:format_3462
