@@ -72,6 +72,7 @@ inputs:
   extra_args:
     type: string
     inputBinding:
+      position: 12
       shellQuote: false
   outprefix:
     type: string
