@@ -62,7 +62,7 @@ inputs:
     type: File?
     inputBinding:
       position: 8
-      prefix: --intervals
+      prefix: -L
   panel_of_normals:
     type: File
     format: edam:format_3016
