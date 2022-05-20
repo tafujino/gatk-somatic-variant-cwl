@@ -66,6 +66,8 @@ inputs:
   panel_of_normals:
     type: File
     format: edam:format_3016
+    secondaryFiles:
+      - .tbi
     inputBinding:
       position: 9
       prefix: --panel-of-normals
