@@ -13,6 +13,7 @@ hints:
     dockerPull: broadinstitute/gatk:4.2.6.1
 
 requirements:
+  ShellCommandRequirement: {}
   InlineJavascriptRequirement: {}
 
 baseCommand: [ gatk ]

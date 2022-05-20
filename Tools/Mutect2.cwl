@@ -12,6 +12,9 @@ hints:
   - class: DockerRequirement
     dockerPull: broadinstitute/gatk:4.2.6.1
 
+requirements:
+  ShellCommandRequirement: {}
+
 baseCommand: [ gatk ]
 
 inputs:
