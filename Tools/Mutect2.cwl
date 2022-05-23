@@ -92,7 +92,7 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.outprefix).somatic.f1r2.tar.gz
- log:
+  log:
     type: stderr
 
 arguments:
