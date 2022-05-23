@@ -92,6 +92,8 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.outprefix).somatic.f1r2.tar.gz
+ log:
+    type: stderr
 
 arguments:
   - position: 2
@@ -102,3 +104,5 @@ arguments:
   - position: 11
     prefix: -O
     valueFrom: $(inputs.outprefix).somatic.vcf.gz
+
+stderr: $(inputs.outprefix).somatic.vcf.log

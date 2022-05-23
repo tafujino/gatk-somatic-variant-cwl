@@ -68,6 +68,8 @@ outputs:
     outputBinding:
       glob: |
         $(inputs.outprefix).somatic.$(inputs.is_tumor ? "tumor" : "normal")-pileups.table
+  log:
+    type: stderr
 
 arguments:
   - position: 2
@@ -85,3 +87,6 @@ arguments:
     prefix: -O
     valueFrom: |
       $(inputs.outprefix).somatic.$(inputs.is_tumor ? "tumor" : "normal")-pileups.table
+
+stderr: |
+  $(inputs.outprefix).somatic.$(inputs.is_tumor ? "tumor" : "normal")-pileups.table.log
