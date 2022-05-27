@@ -74,10 +74,15 @@ inputs:
     inputBinding:
       position: 9
       prefix: --panel-of-normals
+  native-pair-hmm-threads:
+    type: int
+    inputBinding:
+      position: 10
+      prefix: --native-pair-hmm-threads
   extra_args:
     type: string?
     inputBinding:
-      position: 12
+      position: 13
       shellQuote: false
   outprefix:
     type: string
@@ -98,10 +103,10 @@ outputs:
 arguments:
   - position: 2
     valueFrom: Mutect2
-  - position: 10
+  - position: 11
     prefix: --f1r2-tar-gz
     valueFrom: $(inputs.outprefix).somatic.f1r2.tar.gz
-  - position: 11
+  - position: 12
     prefix: -O
     valueFrom: $(inputs.outprefix).somatic.vcf.gz
 
