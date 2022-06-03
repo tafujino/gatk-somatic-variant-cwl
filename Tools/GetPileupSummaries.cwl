@@ -63,7 +63,7 @@ inputs:
     type: string
 
 outputs:
-  pielups_table:
+  pielups:
     type: File
     outputBinding:
       glob: |
