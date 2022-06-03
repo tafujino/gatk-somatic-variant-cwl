@@ -20,7 +20,7 @@ inputs:
     inputBinding:
       position: 1
       prefix: --java-options
-  fr1r_tar_gz:
+  f1r2_tar_gz:
     type:
       type: array
       items: File
