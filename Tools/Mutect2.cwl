@@ -93,7 +93,7 @@ outputs:
     format: edam:format_3016
     outputBinding:
       glob: $(inputs.outprefix).somatic.vcf.gz
-  f1r2:
+  f1r2_tar_gz:
     type: File
     outputBinding:
       glob: $(inputs.outprefix).somatic.f1r2.tar.gz
