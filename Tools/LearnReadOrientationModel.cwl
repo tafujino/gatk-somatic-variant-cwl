@@ -22,7 +22,7 @@ inputs:
       prefix: --java-options
   fr1r_tar_gz:
     type:
-      type: Array
+      type: array
       items: File
       inputBinding:
         prefix: -I
