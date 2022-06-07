@@ -88,7 +88,7 @@ inputs:
     type: string
 
 outputs:
-  vcf:
+  vcf_gz:
     type: File
     format: edam:format_3016
     outputBinding:
