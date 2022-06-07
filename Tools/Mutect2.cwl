@@ -95,6 +95,10 @@ outputs:
       glob: $(inputs.outprefix).somatic.vcf.gz
     secondaryFiles:
       - .tbi
+  stats:
+    type: File
+    outputBinding:
+      glob: $(inputs.outprefix).somatic.vcf.gz.stats
   f1r2_tar_gz:
     type: File
     outputBinding:
