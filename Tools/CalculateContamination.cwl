@@ -34,10 +34,14 @@ inputs:
     type: string
 
 outputs:
-  pielups_table:
+  contamination_table:
     type: File
     outputBinding:
-      glob: $(inputs.outprefix).somatic.artifact-priors.tar.gz
+      glob: $(inputs.outprefix).somatic.contamination.table
+  tumor_segmentation:
+    type: File
+    outputBinding:
+      glob: $(inputs.outprefix).somatic.segments.table
   log:
     type: stderr
 
