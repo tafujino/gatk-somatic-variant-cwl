@@ -1,14 +1,3 @@
-# gatk --java-options "-Xmx~{runtime_params.command_mem}m" FilterMutectCalls -V ~{unfiltered_vcf} \
-#     -R ~{ref_fasta} \
-#     -O ~{output_vcf} \
-#     ~{"--contamination-table " + contamination_table} \
-#     ~{"--tumor-segmentation " + maf_segments} \
-#     ~{"--ob-priors " + artifact_priors_tar_gz} \
-#     ~{"-stats " + mutect_stats} \
-#     --filtering-stats filtering.stats \
-#     ~{m2_extra_filtering_args}
-
-
 #!/usr/bin/env cwl-runner
 
 class: CommandLineTool
@@ -22,6 +11,9 @@ $namespaces:
 hints:
   - class: DockerRequirement
     dockerPull: broadinstitute/gatk:4.2.6.1
+
+requirements:
+  ShellCommandRequirement: {}
 
 baseCommand: [ gatk ]
 
@@ -40,6 +32,31 @@ inputs:
     inputBinding:
       position: 3
       prefix: -R
+  contamination_table:
+    type: File
+    inputBinding:
+      position: 4
+      prefix: --contamination-table
+  tumor_segmentation:
+    type: File
+    inputBinding:
+      position: 5
+      prefix: --tumor-segmentation
+  orientation-bias-artifact-priors:
+    type: File
+    inputBinding:
+      position: 6
+      prefix: --orientation-bias-artifact-priors
+  stats:
+    type: File
+    inputBinding:
+      position: 7
+      prefix: --stats
+  extra_args:
+    type: string?
+    inputBinding:
+      position: 10
+      shellQuote: false
   outprefix:
     type: string
 
@@ -54,8 +71,11 @@ outputs:
 arguments:
   - position: 2
     valueFrom: FilterMutectCalls
-  - position: 4
+  - position: 8
     prefix: -O
     valueFrom: $(inputs.outprefix).somatic.filtered.vcf.gz
+  - position: 9
+    prefix: --filtering-stats
+    valueFrom: $(inputs.outprefix).somatic.filtered.stats
 
-stderr: $(inputs.outprefix).somatic.filtered.vcf.gz
+stderr: $(inputs.outprefix).somatic.filtered.log
