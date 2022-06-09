@@ -32,36 +32,44 @@ inputs:
     inputBinding:
       position: 3
       prefix: -R
+  in_vcf_gz:
+    type: File
+    format: edam:format_3016
+    secondaryFiles:
+      - .tbi
+    inputBinding:
+      position: 4
+      prefix: -V
   contamination_table:
     type: File
     inputBinding:
-      position: 4
+      position: 5
       prefix: --contamination-table
   tumor_segmentation:
     type: File
     inputBinding:
-      position: 5
+      position: 6
       prefix: --tumor-segmentation
   orientation-bias-artifact-priors:
     type: File
     inputBinding:
-      position: 6
+      position: 7
       prefix: --orientation-bias-artifact-priors
   stats:
     type: File
     inputBinding:
-      position: 7
+      position: 8
       prefix: --stats
   extra_args:
     type: string?
     inputBinding:
-      position: 10
+      position: 11
       shellQuote: false
   outprefix:
     type: string
 
 outputs:
-  vcf_gz:
+  out_vcf_gz:
     type: File
     outputBinding:
       glob: $(inputs.outprefix).somatic.filter.vcf.gz
@@ -75,10 +83,10 @@ outputs:
 arguments:
   - position: 2
     valueFrom: FilterMutectCalls
-  - position: 8
+  - position: 9
     prefix: -O
     valueFrom: $(inputs.outprefix).somatic.filter.vcf.gz
-  - position: 9
+  - position: 10
     prefix: --filtering-stats
     valueFrom: $(inputs.outprefix).somatic.filter.stats
 
