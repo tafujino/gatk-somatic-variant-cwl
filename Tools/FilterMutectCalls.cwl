@@ -50,7 +50,7 @@ inputs:
     inputBinding:
       position: 6
       prefix: --tumor-segmentation
-  orientation-bias-artifact-priors:
+  orientation_bias_artifact_priors:
     type: File
     inputBinding:
       position: 7
