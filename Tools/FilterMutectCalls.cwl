@@ -61,10 +61,14 @@ inputs:
     type: string
 
 outputs:
-  pielups_table:
+  vcf_gz:
     type: File
     outputBinding:
-      glob: $(inputs.outprefix).somatic.artifact-priors.tar.gz
+      glob: $(inputs.outprefix).somatic.filter.vcf.gz
+  filtering_stats:
+    type: File
+    outputBinding:
+      glob: $(inputs.outprefix).somatic.filter.stats
   log:
     type: stderr
 
@@ -73,9 +77,9 @@ arguments:
     valueFrom: FilterMutectCalls
   - position: 8
     prefix: -O
-    valueFrom: $(inputs.outprefix).somatic.filtered.vcf.gz
+    valueFrom: $(inputs.outprefix).somatic.filter.vcf.gz
   - position: 9
     prefix: --filtering-stats
-    valueFrom: $(inputs.outprefix).somatic.filtered.stats
+    valueFrom: $(inputs.outprefix).somatic.filter.stats
 
-stderr: $(inputs.outprefix).somatic.filtered.log
+stderr: $(inputs.outprefix).somatic.filter.log
