@@ -49,11 +49,13 @@ inputs:
       position: 5
       prefix: -I
   normal_name:
+    doc: sample name of normal (read group (RG) sample (SM) field)
     type: string?
     inputBinding:
       position: 6
       prefix: --normal-sample
   germline_resource:
+    doc: e.g. af-only-gnomad.hg38.vcf.gz
     type: File
     format: edam:format_3016
     secondaryFiles:
