@@ -74,7 +74,7 @@ inputs:
     inputBinding:
       position: 9
       prefix: --panel-of-normals
-  native-pair-hmm-threads:
+  native_pair_hmm_threads:
     type: int?
     inputBinding:
       position: 10
