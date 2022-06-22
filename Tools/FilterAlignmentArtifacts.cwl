@@ -66,6 +66,8 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.outprefix).somatic.filter.aa.vcf.gz
+    secondaryFiles:
+      - .tbi
   log:
     type: stderr
 

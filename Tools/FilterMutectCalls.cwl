@@ -73,6 +73,8 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.outprefix).somatic.filter.vcf.gz
+    secondaryFiles:
+      - .tbi
   filtering_stats:
     type: File
     outputBinding:
