@@ -108,6 +108,7 @@ inputs:
   filter_funcotations:
     doc: ignore/drop variants that have been filtered in the input
     type: boolean
+    default: false
     inputBinding:
       position: 17
       prefix: --remove-filtered-variants
