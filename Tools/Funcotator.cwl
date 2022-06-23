@@ -80,26 +80,29 @@ inputs:
       prefix: --transcript-list
   anntation_defaults:
     type:
-      type: array?
+      type: array
       items: string
       inputBinding:
         prefix: --annotation-default
+    default: []
     inputBinding:
       position: 14
   anntation_overrides:
     type:
-      type: array?
+      type: array
       items: string
       inputBinding:
         prefix: --annotation-override
+    default: []
     inputBinding:
       position: 15
   excluded_fields:
     type:
-      type: array?
+      type: array
       items: string
       inputBinding:
         prefix: --exclude-field
+    default: []
     inputBinding:
       position: 16
   filter_funcotations:
