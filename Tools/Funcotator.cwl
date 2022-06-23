@@ -80,7 +80,7 @@ inputs:
       prefix: --transcript-list
   anntation_defaults:
     type:
-      type: array
+      type: array?
       items: string
       inputBinding:
         prefix: --annotation-default
@@ -88,7 +88,7 @@ inputs:
       position: 14
   anntation_overrides:
     type:
-      type: array
+      type: array?
       items: string
       inputBinding:
         prefix: --annotation-override
@@ -96,7 +96,7 @@ inputs:
       position: 15
   excluded_fields:
     type:
-      type: array
+      type: array?
       items: string
       inputBinding:
         prefix: --exclude-field
