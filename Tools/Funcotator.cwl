@@ -124,7 +124,7 @@ outputs:
   maf:
     type: File
     outputBinding:
-      glob: $(inputs.outprefix).somatic.filter.maf
+      glob: $(inputs.outprefix).somatic.filter.annotated.maf
     secondaryFiles:
       - .idx
   log:
