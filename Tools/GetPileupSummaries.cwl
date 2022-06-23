@@ -50,6 +50,7 @@ inputs:
       position: 5
       prefix: -L
   variants_for_contamination:
+    doc: e.g. small_exac_common_3.hg38.vcf.gz
     type: File
     format: edam:format_3016
     secondaryFiles:
