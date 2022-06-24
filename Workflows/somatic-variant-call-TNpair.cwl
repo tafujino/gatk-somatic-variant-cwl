@@ -8,6 +8,11 @@ cwlVersion: v1.1
 $namespaces:
   edam: http://edamontology.org/
 
+requirements:
+  MultipleInputFeatureRequirement: {}
+  # The above is required to pass Mutect2/f1r2_tar_gz (a single file) to LearnReadOrientationModel,
+  # which should take an array of files as an input
+
 inputs:
   reference:
     type: File
@@ -54,17 +59,16 @@ inputs:
     secondaryFiles:
       - .tbi
   sequencing_center:
-    type: string?
+    type: string
+    default: Unknown
   sequence_source:
     doc: WGS or WXS for whole genome or whole exome sequencing, respectively
-    type: string?
+    type: string
+    default: Unknown
   Mutect2_java_options:
     type: string?
   Mutect2_native_pair_hmm_threads:
     type: int?
-    inputBinding:
-      position: 10
-      prefix: --native-pair-hmm-threads
   Mutect2_extra_args:
     type: string?
   GetPileupSummaries_java_options:
@@ -82,7 +86,7 @@ inputs:
   Funcotator_java_options:
     type: string?
   Funcotator_data_sources:
-    type: Dictionary
+    type: Directory
   Funcotator_transcript_selection_mode:
     type: string?
   Funcotator_transcript_selection_list:
@@ -135,7 +139,8 @@ steps:
       java_options: GetPileupSummaries_java_options
       reference: reference
       cram: tumor_cram
-      is_tumor: true
+      is_tumor:
+        valueFrom: $(true)
       interval_list: interval_list
       variants_for_contamination: variants_for_contamination
       extra_args: GetPileupSummaries_extra_args
@@ -148,7 +153,8 @@ steps:
       java_options: GetPileupSummaries_java_options
       reference: reference
       cram: normal_cram
-      is_tumor: false
+      is_tumor:
+        valueFrom: $(false)
       interval_list: interval_list
       variants_for_contamination: variants_for_contamination
       extra_args: GetPileupSummaries_extra_args
@@ -168,7 +174,9 @@ steps:
     run: ../Tools/LearnReadOrientationModel.cwl
     in:
       java_options: LearnReadOrientationModel_java_options
-      f1r2_tar_gz: Mutect2/f1r2_tar_gz
+      f1r2_tar_gz:
+        source: [Mutect2/f1r2_tar_gz]
+        linkMerge: merge_flattened
       outprefix: outprefix
     out: [artifact_priors, log]
   FilterMutectCalls:
