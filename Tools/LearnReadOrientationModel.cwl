@@ -32,7 +32,7 @@ inputs:
     type: string
 
 outputs:
-  pielups_table:
+  artifact_priors:
     type: File
     outputBinding:
       glob: $(inputs.outprefix).somatic.artifact-priors.tar.gz
