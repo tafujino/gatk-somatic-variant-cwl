@@ -64,7 +64,7 @@ inputs:
     type: string
 
 outputs:
-  pielups:
+  pileups:
     type: File
     outputBinding:
       glob: |
