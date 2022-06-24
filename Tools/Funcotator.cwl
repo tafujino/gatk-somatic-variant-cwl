@@ -66,6 +66,7 @@ inputs:
     type: string
     default: Unknown
   sequence_source:
+    doc: WGS or WXS for whole genome or whole exome sequencing, respectively
     type: string
     default: Unknown
   transcript_selection_mode:
