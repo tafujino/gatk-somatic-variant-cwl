@@ -49,7 +49,7 @@ inputs:
       position: 5
       prefix: -I
   normal_name:
-    doc: sample name of normal (read group (RG) sample (SM) field)
+    doc: normal sample name (read group (RG) sample (SM) field)
     type: string?
     inputBinding:
       position: 6
