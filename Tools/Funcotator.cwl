@@ -74,7 +74,7 @@ inputs:
     inputBinding:
       position: 12
       prefix: --transcript-selection-mode
-  transcript_list:
+  transcript_selection_list:
     type: File?
     inputBinding:
       position: 13
