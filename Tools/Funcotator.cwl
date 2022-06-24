@@ -79,7 +79,7 @@ inputs:
     inputBinding:
       position: 13
       prefix: --transcript-list
-  anntation_defaults:
+  annotation_defaults:
     type:
       type: array
       items: string
@@ -88,7 +88,7 @@ inputs:
     default: []
     inputBinding:
       position: 14
-  anntation_overrides:
+  annotation_overrides:
     type:
       type: array
       items: string
