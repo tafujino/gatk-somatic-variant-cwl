@@ -71,6 +71,7 @@ inputs:
 outputs:
   out_vcf_gz:
     type: File
+    format: edam:format_3016
     outputBinding:
       glob: $(inputs.outprefix).somatic.filter.vcf.gz
     secondaryFiles:
