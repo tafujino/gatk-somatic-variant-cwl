@@ -14,6 +14,8 @@ requirements:
   # which should take an array of files as an input
   StepInputExpressionRequirement: {}
   # The above is required to use "valueFrom" in a workflow step
+  InlineJavascriptRequirement: {}
+  # The above is required to evaluate $(true) and $(false) expression
 
 inputs:
   reference:
