@@ -1,8 +1,8 @@
 #!/usr/bin/env cwl-runner
 
 class: Workflow
-id: somatic-variant-call-TNpair
-label: somatic-variant-call-TNpair
+id: somatic-variant-call-TN
+label: somatic-variant-call-TN
 cwlVersion: v1.1
 
 $namespaces:
