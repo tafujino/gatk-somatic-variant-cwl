@@ -12,6 +12,8 @@ requirements:
   MultipleInputFeatureRequirement: {}
   # The above is required to pass Mutect2/f1r2_tar_gz (a single file) to LearnReadOrientationModel,
   # which should take an array of files as an input
+  StepInputExpressionRequirement: {}
+  # The above is required to use "valueFrom" in a workflow step
 
 inputs:
   reference:
