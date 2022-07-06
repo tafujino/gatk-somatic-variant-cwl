@@ -170,7 +170,7 @@ steps:
     in:
       java_options: CalculateContamination_java_options
       tumor_pileups: GetPileupSummaries_tumor/pileups
-      normal_pileups: GetPileupSummaries_tumor/pileups
+      normal_pileups: GetPileupSummaries_normal/pileups
       outprefix: outprefix
     out: [contamination_table, tumor_segmentation, log]
   LearnReadOrientationModel:
